@@ -1,116 +1,101 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Timers;
+namespace ClassLib
+{
+    class PC {
+        public string stemp;
+        public int SerialNumber;
+        public string processor;
+        public bool included = false;
+        public PC() { }
+        public PC(string stemp, int SerialNumber, string processor,bool included)
+        {
+            this.stemp = stemp;
+            this.SerialNumber = SerialNumber;
+            this.processor = processor;
+            this.included = included;
+        }
+        public void setrStemp(string newStemp)
+        {
+            this.stemp = newStemp;
+        }
+        public void setrSerialNumber(int newSerialNumber)
+        {
+            this.SerialNumber = newSerialNumber;
+        }
+        public void setrProcessor(string newProcessor)
+        {
+            this.processor = newProcessor;
+        }
+        public void setrincluded(bool newIncluded)
+        {
+            this.included = newIncluded;
+        }
+        public string getrStemp()
+        {
+            return this.stemp;
+        }
+        public int getrSerialNumber()
+        {
+            return this.SerialNumber;
+        } 
+        public string getrProcessor()
+        {
+            return this.processor;
+        }
+        public bool getrIncluded()
+        {
+            return this.included;
+        }
 
-namespace homework16._04._25
+        public void turnOn()
+        {
+            included = true;
+        }
+        public void turnOff()
+        {
+            included = false;
+        }
+    }
+
+}
+
+namespace classwork
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            //задание 3
-            // чтобы проверитть задание нужно закаментировать остальные задания 
-            string line;
-            string num = "";
-            for (int i = 0; i < 4; i++)
-            {
-                line = Console.ReadLine();
-                num = num + line;
-            }
-            int number = Int32.Parse(num);
-            Console.WriteLine(number);
-
-            //задание 4 
-
-            Console.WriteLine("Please enter a six-digit number");
-            string num;
-            num = Console.ReadLine();
-            if (num.Length != 6)
-            {
-                Console.WriteLine("The number was entered incorrectly");
-            }
-            else
-            {
-                Console.WriteLine("Please enter two numbers");
-                int num1 = Int32.Parse((Console.ReadLine()));
-                int num2 = Int32.Parse((Console.ReadLine()));
-                char buf2 = num[num2 - 1];
-                char buf1 = num[num1 - 1];
-                var result = num.Select(x => x == buf1 ? buf2 : (x == buf2 ? buf1 : x)).ToArray();
-                num = new String(result);
-
-
-
-            }
-            Console.WriteLine(num);
-
-            //задание 6
-
-            double num;
-            Console.WriteLine(" from farenheit to celsius: 1");
-            Console.WriteLine(" from celcius to farenheit: 2");
-            int choice = int.Parse(Console.ReadLine());
-            switch (choice)
-            {
-                case 1:
-                    Console.WriteLine("enter the degrees:");
-                    num = double.Parse(Console.ReadLine());
-                    num = 5 / 9 * (num - 32);
-                    Console.WriteLine(num.ToString());
-                    return;
-
-                case 2:
-                    Console.WriteLine("enter the degrees:");
-                    num = double.Parse(Console.ReadLine());
-                    num = (num * 9) / 5 + 32;
-                    Console.WriteLine(num.ToString());
-                    return;
-                default:
-                    break;
-            }
-
-            //задание 7
-            Console.WriteLine("enter the range:");
-            int ot = int.Parse(Console.ReadLine());
-            int do1 = int.Parse(Console.ReadLine());
-            if (ot > do1)
-            {
-                int num = do1;
-                do1 = ot;
-                ot = num;
-                for (int i = ot; i < do1; i++)
-                {
-                    if (i % 2 == 0)
-                    {
-                        Console.WriteLine(i.ToString());
-                    }
-                }
-            }
-            else if (ot == do1) {
-                Console.WriteLine("enter the range:");
-                ot = int.Parse(Console.ReadLine());
-                do1 = int.Parse(Console.ReadLine());
-                for (int i = ot; i < do1; i++)
-                {
-                    if (i % 2 == 0)
-                    {
-                        Console.WriteLine(i.ToString());
-                    }
-                }
-            }
-            else {
-                for (int i = ot; i < do1; i++)
-                {
-                    if (i % 2 == 0)
-                    {
-                        Console.WriteLine(i.ToString());
-                    }
-                }
+            classwork.Class1 v = new classwork.Class1();
+            v.lalal();
+                //string path = "C:\\Users\\Взрослая академия\\Desktop\\name.csv";
+                //ClassLib.PC a = new ClassLib.PC("uedvfcel", 29836, "yhwgclf", false);  
+                //ClassLib.PC b = new ClassLib.PC("ljfbh", 8023, "iredg", true);
+                //ClassLib.PC c = new ClassLib.PC("lsjdb", 9863, "idhjvg'o", false);
+                //ClassLib.PC d = new ClassLib.PC(".kjsdcgbvs", 28758, "olikhgolvkn", false);
+                //ClassLib.PC e = new ClassLib.PC(";ajbg", 3796, "lsdebgjjbvgf", true);
+                //List<ClassLib.PC> a1 = new List<ClassLib.PC>();
+                //a1.Add(a);
+                //a1.Add(b);
+                //a1.Add(c);
+                //a1.Add(d);
+                //a1.Add(e);
+                //using (StreamWriter file = new StreamWriter(path,append:true))
+                //{
+                //    for (int i = 0; i < 5; i++)
+                //    {
+                //        file.WriteLine(a1[i].getrProcessor());
+                //        file.WriteLine(a1[i].getrIncluded());
+                //        file.WriteLine(a1[i].getrSerialNumber());
+                //        file.WriteLine(a1[i].getrStemp());
+                //        file.WriteLine();
+        }
             }
 
         }
-    }
-}
+    
+
