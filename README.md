@@ -3,3 +3,4 @@
 ## [домашняя работа (02.06)](https://github.com/mila0408/homework-of-c-/blob/main/Program.cs)
 ## [домашняя работа часть 2 (02.06)](https://github.com/mila0408/homework-of-c-/blob/main/Class1.cs)
 ## [домашняя работа (14.09)](https://github.com/mila0408/homework-of-c-/tree/main/tablice)
+## [домашняя работа "Академия"](https://github.com/mila0408/homework-of-c-/blob/main/WinFormsApp1.rar)
